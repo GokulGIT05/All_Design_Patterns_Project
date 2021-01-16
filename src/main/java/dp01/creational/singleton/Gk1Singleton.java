@@ -43,7 +43,8 @@ final class BasicSingletonTest {
 	
 	
 	// Static Factory Method to get the singleton Object
-	public static BasicSingletonTest getSingletonObject() {
+	// To make Thread Safe, we can make the static method as synchronized
+	public static /*synchronized*/ BasicSingletonTest getSingletonObject() {
 		
 		if(basicSingletonObj == null) {
 			basicSingletonObj = new BasicSingletonTest();
@@ -51,5 +52,6 @@ final class BasicSingletonTest {
 		return basicSingletonObj;
 	}
 }
+
 
 
